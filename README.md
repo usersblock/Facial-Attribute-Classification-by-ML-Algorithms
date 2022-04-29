@@ -1,2 +1,2 @@
 # Facial-Attribute-Classification-by-ML-Algorithms
-Implementation and performance testing of different machine learning classifiers.
+Implementation and performance testing of different machine learning classifiers. The project will consist of implementing different classifiers and testing them to see which one converges faster, uses the least amount of features and has a higher accuracy. A modification of the random forest algorithm is also use for increase performance using tha model.
