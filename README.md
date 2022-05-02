@@ -1,5 +1,6 @@
-{{cookiecutter.project_name}}
+{{Facial-Attribute-Classification-by-ML-Algorithms}}
 ==============================
+The project will consist of implementing different classifiers and testing them to see which one converges faster, uses the least amount of features, and has a higher accuracy. Special care is put to feature pre-processing and cleaning. Different process are applied to each image such as Sobel algorithm to detect edges, CASCADE and SIFT.
 
 {{cookiecutter.description}}
 
