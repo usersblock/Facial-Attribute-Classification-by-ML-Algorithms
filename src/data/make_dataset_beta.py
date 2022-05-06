@@ -26,12 +26,14 @@ def get_labels_npimages(df,y):
         df['age']=np.where(((df.age>=36) & (df.age<51)), 7, df.age)
         df['age']=np.where(((df.age>=51) & (df.age<80)), 8, df.age)
         df['age']=np.where((df.age>=80), 9, df.age)
+
     X = df['file'].values
     y = df[y].astype(int).values
     img_container = []
     for i in X:
         img = cv2.imread(i)
         img_container.append([i,img])
+
     return img_container, y
     
 
@@ -41,4 +43,6 @@ def get_labels_npimages(df,y):
 
 #np.array(X).shape
 
+
 #np.array(y).shape
+
