@@ -98,6 +98,7 @@ def histogramEqualizer(imagesArray):
     intensity = []
     hist = []
     adapthist = []
+
     for image in imagesArray:
         p2, p98 = np.percentile(image, (2, 98))
         
@@ -114,3 +115,28 @@ def histogramEqualizer(imagesArray):
         adapthist.append(img_adapteq)
         
     return np.array(intensity), np.array(hist), np.array(adapthist)
+
+def images_extractor(mypath):
+    import pandas as pd
+    from os import listdir
+    import numpy as np
+ 
+    #mypath = '/Users/jenifervivar/Desktop/crop_part1/'#'./Data/CroppedImages'
+    filenames = np.array([f for f in listdir(mypath) if isfile(join(mypath, f))])
+    splitcolumns = [x.split('_')[0:3] + [x] for x in filenames if x.count('_') == 3]
+    filecolumns = ['age','gender','race','file']
+    filedf = pd.DataFrame(data = splitcolumns, columns = filecolumns)
+    filedfnona = filedf.dropna()
+    filedfnona['age']  = filedfnona['age'].astype(int)
+    filedfnona['race'] = filedfnona['race'].astype(int)
+    filedfnona['gender'] = filedfnona['gender'].astype(int)
+
+    images = []
+    for img in filedfnona['file']:
+        image = plt.imread(mypath + img)
+        images.append(image)
+    return images
+
+robers, sobel_ = robertsSobelEdges(images)
+intensity, hist, adapthist = histogramEqualizer(images)
+gamma, log = gammaLogaritmictCorrection(images)
