@@ -44,7 +44,7 @@ def sobelFilterHSV(imagesArray):
 
 def sobelChannel(imagesArray):
     filterChannel = [] 
-    for images in imagesArray:
+    for image in imagesArray:
         image1 = rescale_intensity(1 - sobel_each(image))
         filterChannel.append(image1)
         
@@ -122,7 +122,7 @@ def histogramEqualizer(imagesArray):
 
 def intesityEqualizer(imagesArray):
     intensity = []
-    for images in imagesArray:
+    for image in imagesArray:
         image = color.rgb2gray(image)
         p2, p98 = np.percentile(image, (2, 98))
         img_rescale = exposure.rescale_intensity(image, in_range=(p2, p98))
@@ -142,9 +142,7 @@ def images_extractor(mypath):
     import pandas as pd
     from os import listdir
     import numpy as np
-    mypath = '/Users/jenifervivar/Desktop/Desktop - jenifer’s MacBook Air/Machine_learning_code/crop_test/'
- 
-    #mypath = '/Users/jenifervivar/Desktop/crop_part1/'#'./Data/CroppedImages'
+
     filenames = np.array([f for f in listdir(mypath) if isfile(join(mypath, f))])
     splitcolumns = [x.split('_')[0:3] + [x] for x in filenames if x.count('_') == 3]
     filecolumns = ['age','gender','race','file']
