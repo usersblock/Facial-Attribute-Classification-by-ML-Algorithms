@@ -137,6 +137,6 @@ def images_extractor(mypath):
         images.append(image)
     return images
 
-robers, sobel_ = robertsSobelEdges(images)
-intensity, hist, adapthist = histogramEqualizer(images)
-gamma, log = gammaLogaritmictCorrection(images)
+#robers, sobel_ = robertsSobelEdges(images)
+#intensity, hist, adapthist = histogramEqualizer(images)
+#gamma, log = gammaLogaritmictCorrection(images)
