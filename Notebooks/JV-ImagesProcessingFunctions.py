@@ -160,18 +160,7 @@ def images_extractor(mypath):
         images.append(image)
     return images
 
-sobel_hsv = sobelFilterHSV(images)
-sobel_channel = sobelChannel(images)
-robertEdges = robertsEdges(images)
-sobelEdges = sobelEdges(images)
-exposureImage = exposure(images)
-gamma = gammaCorrection(images)
-log = logCorrection(images)
-histE = histogramEqualizer(images)
-intensityEqua = intesityEqualizer(images)
-adaptist = adaptistEqualizer(images)
-
-
+ 
 
 
 
