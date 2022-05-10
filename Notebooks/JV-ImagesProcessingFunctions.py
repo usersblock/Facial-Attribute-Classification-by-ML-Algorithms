@@ -44,7 +44,7 @@ def sobelFilterHSV(imagesArray):
 
 def sobelChannel(imagesArray):
     filterChannel = [] 
-    for images in images Array:
+    for images in imagesArray:
         image1 = rescale_intensity(1 - sobel_each(image))
         filterChannel.append(image1)
         
@@ -95,7 +95,7 @@ def gammaCorrection(imagesArray):
 
 def logCorrection(imagesArray):
     log = []
-    for image in images:
+    for image in imagesArray:
         logarithmic_corrected = exposure.adjust_log(image, 1)
         log.append(logarithmic_corrected)
     return np.array(log)
