@@ -1,6 +1,5 @@
-{{Facial-Attribute-Classification-by-ML-Algorithms}}
+{{cookiecutter.project_name}}
 ==============================
-The project will consist of implementing different classifiers and testing them to see which one converges faster, uses the least amount of features, and has a higher accuracy. Special care is put to feature pre-processing and cleaning. Different process are applied to each image such as Sobel algorithm to detect edges, CASCADE and SIFT.
 
 {{cookiecutter.description}}
 
@@ -56,4 +55,3 @@ Project Organization
 --------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
-<p><small>Dataset Location: <a target="_blank" href="https://susanqq.github.io/UTKFace/">UTK FACE|Large Scale Face Dataset </a></small></p>
